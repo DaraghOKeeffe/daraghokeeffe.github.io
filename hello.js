@@ -13,7 +13,7 @@ angular.mdule('auth',[])
     var userID = 'up105904596';
     $http.post('https://cex.io/api/balance').
         then(function(response) {
-            $scope.auth = response.data;
+            $scope.auth = sec;
         });
     
 });
