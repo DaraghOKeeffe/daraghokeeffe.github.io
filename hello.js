@@ -11,10 +11,11 @@ mod.controller('Test2', function test2($scope,$http){
     var nonce = (Math.round((new Date()).getTime() / 1000)).toString();
     console.log("NONCE : "+nonce);
     var api_key = 'hOhqIVyWQysk6KpFMDRzPgnwgA';
+    // Look at ways to hide this
     var sec = 'RC9NQ6tfXs2Uk36Ntj68jr3N4';
     var userID = 'up105904596';
 
-    //Need to hmac this
+
     var signa= nonce+userID+api_key;
     console.log("SIGNA : "+signa);
     var hash = sha256.hmac.create(sec).update(signa);
@@ -22,6 +23,8 @@ mod.controller('Test2', function test2($scope,$http){
     hash = hash.hex().toString().toUpperCase();
     console.log("COMPLETED HASH : "+hash);
 
+
+    // Possible header issue. Generate key for daraghokeeffe.github.io (see CORS)
     var porv = JSON.stringify({ 'key' : api_key, 'signature' : hash, 'nonce' : nonce });
     //var porv = ['key': api_key,'signature':hash,'nonce':nonce];
    // var head = { headers : { 'Content-Type': 'application/x-www-form-urlencoded' }};
@@ -38,7 +41,7 @@ mod.controller('Test2', function test2($scope,$http){
             $scope.auth = 'Yurt';
         }).
         error(function(data, status, headers, config) {
-            $scope.auth = 'Fack';
+            $scope.auth = 'Failed';
             console.log(data);
              console.log("PORV"+porv);
             console.log('uiui : '+status);
