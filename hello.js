@@ -1,7 +1,7 @@
 angular.module('demo', [])
 .controller('Hello', function($scope, $http) {
-    $http.get('http://rest-service.guides.spring.io/greeting').
+    $http.get('https://cex.io/api/last_price/BTC/USD').
         then(function(response) {
-            $scope.greeting = response.data;
+            $scope.price = response.data;
         });
 });
