@@ -6,7 +6,7 @@ angular.module('demo', [])
         });
 });
 angular.module('auth',[])
-.controller('Auth', function($scope, $http){
+.controller('Auth', function(){
     var api_key = 'hOhqIVyWQysk6KpFMDRzPgnwgA';
     var sec = 'RC9NQ6tfXs2Uk36Ntj68jr3N4';
     var nonce = formatAMPM();
@@ -18,11 +18,11 @@ angular.module('auth',[])
             'signature' : message,
             'nonce' : nonce
     });
-    $http.post('https://cex.io/api/balance', data).
-        then(function(response) {
-            $scope.auth = sec;
-        });
-    
+   # $http.post('https://cex.io/api/balance', data).
+    #    then(function(response) {
+     #       $scope.auth = sec;
+      #  });
+    return data;
 });
 
 
