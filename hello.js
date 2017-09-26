@@ -5,7 +5,7 @@ angular.module('demo', [])
             $scope.price = response.data;
         });
 });
-angular.mdule('auth',[])
+angular.module('auth',[])
 .controller('Auth', function($scope, $http){
     var api_key = 'hOhqIVyWQysk6KpFMDRzPgnwgA';
     var sec = 'RC9NQ6tfXs2Uk36Ntj68jr3N4';
