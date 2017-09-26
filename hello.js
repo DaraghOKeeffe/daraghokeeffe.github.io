@@ -11,6 +11,10 @@ angular.mdule('auth',[])
     var sec = 'RC9NQ6tfXs2Uk36Ntj68jr3N4';
     var nonce = formatAMPM();
     var userID = 'up105904596';
+    $http.post('https://cex.io/api/balance').
+        then(function(response) {
+            $scope.auth = response.data;
+        });
     
 });
 
