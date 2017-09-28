@@ -10,9 +10,11 @@ mod.controller('Hello', function($scope, $http) {
 mod.controller('Test2', function test2($scope,$http){
     var nonce = (Math.round((new Date()).getTime() / 1000)).toString();
     console.log("NONCE : "+nonce);
-    var api_key = 'hOhqIVyWQysk6KpFMDRzPgnwgA';
+    // sec2 = zxe9qAXhJGXfLNfyJtK4Ra6gOw
+    // api_key2 = 39cGO1qlDF0ynrEL1q8UruZAhWg
+    var api_key = 'gfizp3T1M4JDcbaHc0Lo7fplaQ';
     // Look at ways to hide this
-    var sec = 'RC9NQ6tfXs2Uk36Ntj68jr3N4';
+    var sec = 'x4uN9CEaOW5FWoKigVQCy7eXs8';
     var userID = 'up105904596';
 
 
